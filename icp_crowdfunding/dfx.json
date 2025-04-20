@@ -1,0 +1,30 @@
+{
+  "canisters": {
+    "icp_crowdfunding_backend": {
+      "candid": "src/icp_crowdfunding_backend/icp_crowdfunding_backend.did",
+      "package": "icp_crowdfunding_backend",
+      "type": "rust"
+    },
+    "icp_crowdfunding_frontend": {
+      "dependencies": [
+        "icp_crowdfunding_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/icp_crowdfunding_frontend/src/index.html"
+      },
+      "source": [
+        "src/icp_crowdfunding_frontend/assets",
+        "dist/icp_crowdfunding_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
