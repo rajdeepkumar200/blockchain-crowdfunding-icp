@@ -1,0 +1,7 @@
+C:\Users\hp\icp-crowdfunding\icp_crowdfunding\src\icp_crowdfunding_backend\target\debug\deps\libnum_enum-433dd93e76ad8aa3.rmeta: C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\num_enum-0.6.1\src\lib.rs
+
+C:\Users\hp\icp-crowdfunding\icp_crowdfunding\src\icp_crowdfunding_backend\target\debug\deps\libnum_enum-433dd93e76ad8aa3.rlib: C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\num_enum-0.6.1\src\lib.rs
+
+C:\Users\hp\icp-crowdfunding\icp_crowdfunding\src\icp_crowdfunding_backend\target\debug\deps\num_enum-433dd93e76ad8aa3.d: C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\num_enum-0.6.1\src\lib.rs
+
+C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\num_enum-0.6.1\src\lib.rs:

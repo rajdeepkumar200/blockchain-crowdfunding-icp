@@ -138,6 +138,41 @@ fn get_user_contributions(campaign_id: u64) -> Result<u64, String> {
     })
 }
 
-// Candid interface export
-ic_cdk::export_candid!();
+candid::export_service!();
 
+#[cfg(test)]
+mod tests {
+
+    #[test]
+    fn save_candid() {
+        use std::env;
+        use std::fs::write;
+        use std::path::PathBuf;
+
+        let dir = PathBuf::from(env::var("CARGO_MANIFEST_DIR").unwrap());
+        let did_path = dir.join("icp_crowdfunding_backend.did");
+
+        let service = format!("type Campaign = record {{
+            id: nat64;
+            name: text;
+            description: text;
+            creator: principal;
+            goal_amount: nat64;
+            current_amount: nat64;
+            deadline: nat64;
+            is_active: bool;
+            contributors: vec record {{ principal; nat64 }};
+        }};
+        
+        service : {{
+            create_campaign: (text, text, nat64, nat64) -> (nat64);
+            contribute_to_campaign: (nat64, nat64) -> (variant {{ Ok; Err: text }});
+            get_campaign: (nat64) -> (variant {{ Ok: Campaign; Err: text }}) query;
+            get_all_campaigns: () -> (vec Campaign) query;
+            is_campaign_successful: (nat64) -> (variant {{ Ok: bool; Err: text }}) query;
+            get_user_contributions: (nat64) -> (variant {{ Ok: nat64; Err: text }}) query;
+        }}");
+
+        write(did_path, service).expect("Write failed.");
+    }
+}
